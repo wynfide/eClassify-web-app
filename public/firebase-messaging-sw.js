@@ -3,14 +3,15 @@ importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js')
 // // Initialize the Firebase app in the service worker by passing the generated config
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDF4akNXoNOFjedcwmYomSjnYTOGjn0USI",
-  authDomain: "eclassify-57e13.firebaseapp.com",
-  projectId: "eclassify-57e13",
-  storageBucket: "eclassify-57e13.firebasestorage.app",
-  messagingSenderId: "65833947255",
-  appId: "1:65833947255:web:495d09eef5d74c5b237672",
-  measurementId: "G-NG8BG0CQTF"
+  apiKey: "AIzaSyB4QfubBZpoQlX5RRkDiHQiwUhar0hqfKU",
+  authDomain: "eclassify-84e25.firebaseapp.com",
+  projectId: "eclassify-84e25",
+  storageBucket: "eclassify-84e25.firebasestorage.app",
+  messagingSenderId: "118133670765",
+  appId: "1:118133670765:web:463c43352bead0abd01064",
+  measurementId: "G-B5PY2E597D"
 };
+
 
 firebase?.initializeApp(firebaseConfig)
 
