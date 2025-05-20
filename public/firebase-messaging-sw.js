@@ -3,14 +3,15 @@ importScripts('https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js')
 // // Initialize the Firebase app in the service worker by passing the generated config
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB4QfubBZpoQlX5RRkDiHQiwUhar0hqfKU",
-  authDomain: "eclassify-84e25.firebaseapp.com",
-  projectId: "eclassify-84e25",
-  storageBucket: "eclassify-84e25.firebasestorage.app",
-  messagingSenderId: "118133670765",
-  appId: "1:118133670765:web:463c43352bead0abd01064",
-  measurementId: "G-B5PY2E597D"
+  apiKey: "AIzaSyDlDbHKV1D-xkOaOs_vbAcGHPieAiCRrqI",
+  authDomain: "wynfi-app.firebaseapp.com",
+  projectId: "wynfi-app",
+  storageBucket: "wynfi-app.firebasestorage.app",
+  messagingSenderId: "295719356251",
+  appId: "1:295719356251:web:b6fc63091ec8c146903c7e",
+  measurementId: "G-XQG6MKDPRS"
 };
+
 
 
 firebase?.initializeApp(firebaseConfig)
