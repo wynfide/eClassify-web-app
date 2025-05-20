@@ -10,18 +10,18 @@ const port = process.env.NODE_PORT || 8003
 app.prepare().then(() => {
   createServer((req, res) => {
 
-    // ✅ CORS-Header für alle Anfragen setzen
-    res.setHeader('Access-Control-Allow-Origin', 'https://admin.wynfi.de');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    // // ✅ CORS-Header für alle Anfragen setzen
+    // res.setHeader('Access-Control-Allow-Origin', 'https://admin.wynfi.de');
+    // res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+    // res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    // ✅ Preflight-Anfragen (OPTIONS) direkt beantworten
-    if (req.method === 'OPTIONS') {
-      res.writeHead(200);
-      res.end();
-      return;
-    }
-    
+    // // ✅ Preflight-Anfragen (OPTIONS) direkt beantworten
+    // if (req.method === 'OPTIONS') {
+    //   res.writeHead(200);
+    //   res.end();
+    //   return;
+    // }
+
     const parsedUrl = parse(req.url, true);
     const { pathname, query } = parsedUrl;
     if (pathname.startsWith('/.well-known')) {
