@@ -1,11 +1,10 @@
 import { Providers } from "@/redux/store/providers";
 import "../../public/css/style.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Head from "next/head";
 import { Toaster } from "react-hot-toast";
 import 'react-loading-skeleton/dist/skeleton.css'
 import axios from "axios";
-// import Script from "next/script";
+import Script from 'next/script';
 
 export const revalidate = 3600;
 
@@ -31,23 +30,40 @@ export const generateMetadata = async () => {
 };
 
 export default async function RootLayout({ children }) {
-
-  const metadata = await generateMetadata(); // Fetch metadata
+  const metadata = await generateMetadata();
   const placeApiKey = metadata?.placeApiKey;
 
   return (
-    <html lang="en" web-version={process.env.NEXT_PUBLIC_WEB_VERSION}>
-      <Head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossOrigin="anonymous" />
+    <html lang="de" web-version={process.env.NEXT_PUBLIC_WEB_VERSION}>
+      <head>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+          crossOrigin="anonymous"
+        />
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="icon" href={metadata?.icons?.[0]?.url || '/favicon.ico'} />
         <script src="https://js.paystack.co/v1/inline.js"></script>
         <script async defer src={`https://maps.googleapis.com/maps/api/js?key=${placeApiKey}&libraries=places&loading=async`}></script>
-      </Head>
+      </head>
       <body>
-        {/* <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxx"
-          crossOrigin="anonymous" strategy="afterInteractive" /> */}
+        {/* CCM19 Cookie Consent Script */}
+        <Script
+          src="https://cloud.ccm19.de/app.js?apiKey=637ac09c8368050ea2070c909e48ca4ef69f5c3956b5c154&domain=68386b353fa8ac24c9020212"
+          strategy="afterInteractive"
+          referrerPolicy="origin"
+        />
 
-        <Providers >
+        {/* Optional: Google Ads (auskommentiert) */}
+        {/* <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxx"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        /> */}
+
+        <Providers>
           <Toaster position="top-center" reverseOrder={false} />
           {children}
         </Providers>
@@ -55,4 +71,3 @@ export default async function RootLayout({ children }) {
     </html>
   );
 }
-
